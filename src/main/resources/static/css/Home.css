@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1e2a38;
+    background: url("../images/bg-image.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 5px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.add-employee-btn {
+    background-color: #4b6584;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.add-employee-btn:hover {
+    background-color: #3b5068;
+}
+
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2f3d4a;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.employee-table thead {
+    background-color: #3b5068;
+}
+
+.employee-table th, .employee-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.employee-table th {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.employee-table td {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.employee-table tr:hover {
+    background-color: #3f4e5d;
+}
+
+.action-btn {
+    background-color: transparent;
+    border: none;
+    color: #3498db;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.action-btn.edit-btn {
+    color: #27ae60;
+}
+
+.action-btn.delete-btn {
+    color: #e74c3c;
+}
+
+.action-btn:hover {
+    text-decoration: underline;
+} 
