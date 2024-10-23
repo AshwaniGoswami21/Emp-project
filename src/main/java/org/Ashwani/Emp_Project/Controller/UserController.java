@@ -2,6 +2,7 @@ package org.Ashwani.Emp_Project.Controller;
 
 import jakarta.servlet.http.HttpSession;
 import org.Ashwani.Emp_Project.Entity.UserEntity;
+import org.Ashwani.Emp_Project.Service.EmailService;
 import org.Ashwani.Emp_Project.Service.UserService;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,9 +13,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class UserController {
 
     private final UserService userService;
-
-    public UserController(UserService userService) {
+    private final EmailService emailService;
+    public UserController(UserService userService, EmailService emailService) {
         this.userService = userService;
+        this.emailService = emailService;
     }
 
     ModelAndView modelAndView = new ModelAndView();
@@ -52,6 +54,12 @@ public class UserController {
     @PostMapping("/signup")
     public ModelAndView registerUser(@RequestParam String companyName, @RequestParam String email, @RequestParam String passkey, HttpSession session) {
         ModelAndView modelAndView = new ModelAndView();
+
+        if (emailService.emailExists(email)) {
+            modelAndView.addObject("error", "Email already exists");
+            modelAndView.setViewName("register");
+            return modelAndView;
+        }
 
         // Temporarily store user details in session
         session.setAttribute("companyName", companyName);
